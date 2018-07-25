@@ -261,6 +261,9 @@ ngx_http_write_filter(ngx_http_request_t *r, ngx_chain_t *in)
         return NGX_ERROR;
     }
 
+    ngx_log_debug1(NGX_LOG_DEBUG_HTTP, c->log, 0,
+                   "limit_rate_after %O", r->limit_rate_after);
+
     if (r->limit_rate) {
 
         nsent = c->sent;
