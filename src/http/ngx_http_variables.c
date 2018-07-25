@@ -326,6 +326,11 @@ static ngx_http_variable_t  ngx_http_core_variables[] = {
       offsetof(ngx_http_request_t, limit_rate),
       NGX_HTTP_VAR_CHANGEABLE|NGX_HTTP_VAR_NOCACHEABLE, 0 },
 
+    { ngx_string("limit_rate_after"), ngx_http_variable_request_set_size,
+      ngx_http_variable_request_get_size,
+      offsetof(ngx_http_request_t, limit_rate_after),
+      NGX_HTTP_VAR_CHANGEABLE|NGX_HTTP_VAR_NOCACHEABLE, 0 },
+
     { ngx_string("connection"), NULL,
       ngx_http_variable_connection, 0, 0, 0 },
 
